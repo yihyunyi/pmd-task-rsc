@@ -3,8 +3,9 @@ platform: linux
 image: "docker:///mhlee/javapmd"
 
 inputs:
-  - name: findbug-git
+  - name: test-git
+  - name: rsc-git
     path: .
 
 run:
-  path: ./task_show.sh
+  path: ./pipe-task/task_show.sh
