@@ -1,0 +1,11 @@
+platform: linux
+
+image: "docker:///mhlee/javapmd"
+
+inputs:
+  - name: find-report-file
+    path: .
+
+run:
+  path: cat
+  args: ./findbugsReports.html

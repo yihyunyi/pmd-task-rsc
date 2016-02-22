@@ -1,0 +1,15 @@
+
+        platform: linux
+        image: docker:///maven#3.3.3
+        inputs:
+          - name: timer-03
+          - name: git-03
+            path: .
+           #path: iJdir
+
+        outputs:
+          - name: junit-03-out
+            path: /
+        run:
+          path: mvn
+          args: ["-f", "./pom.xml", "-l", "./junit-03-test{{timer-03}}.log", "test"]

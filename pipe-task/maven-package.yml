@@ -1,0 +1,18 @@
+platform: linux
+
+image: docker:///maven#3.3.3
+
+inputs:
+  - name: rsc-git
+
+outputs:
+  - name: moonii-jar-file
+    path: rsc-git/target
+
+run:
+  -aggregate:
+  path: rsc-git/task_show.sh
+  args:
+  path: mvn
+  args: ["-f", "rsc-git/pom.xml", "-DskipTests=false", "package"]
+

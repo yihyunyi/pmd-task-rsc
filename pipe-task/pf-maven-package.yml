@@ -1,0 +1,18 @@
+platform: linux
+
+image: docker:///maven#3.3.3
+
+inputs:
+  - name: findbug-git
+
+outputs:
+  - name: find-jar-file
+    path: findbug-git/target
+
+run:
+  -aggregate:
+  path: findbug-git/task_show.sh
+  args:
+  path: mvn
+  args: ["-f", "findbug-git/pom.xml", "-DskipTests=false", "package"]
+

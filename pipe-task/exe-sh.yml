@@ -1,0 +1,10 @@
+platform: linux
+
+image: "docker:///mhlee/javapmd"
+
+inputs:
+  - name: rsc-git
+    path: .
+
+run:
+  path: ./task_show.sh

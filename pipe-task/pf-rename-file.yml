@@ -1,0 +1,16 @@
+platform: linux
+
+image: docker:///maven#3.3.3
+
+inputs:
+  - name: pub-timer
+  - name: find-jar-file
+
+outputs:
+  - name: find-jar-file-renamed
+    path: find-jar-file-renamed
+
+run:
+  path: mv
+  args: ["find-jar-file/concourse-java-maven-test-prj-0.0.1-SNAPSHOT.jar", "find-jar-file-renamed/pf-concourse-java-maven-test-prj-{{pub-timer}}.jar"]
+
