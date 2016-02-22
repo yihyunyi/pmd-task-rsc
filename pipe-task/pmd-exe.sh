@@ -10,7 +10,7 @@ if [ $? -eq 0 ]; then
         cmd=echo grep -c $pmd_err_word $pmd_report_file
 
         if [ $? -eq 0 ]; then
-                echo "pmd violation $cmd deteded"
+                echo "pmd violation deteded"
                 exit 1
         else
                 echo "pmd check success"
