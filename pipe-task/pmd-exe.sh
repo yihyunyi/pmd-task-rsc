@@ -7,7 +7,7 @@ pmd_err_word='<violation'
 java $pmd_cmd > $pmd_report_file
 
 if [ $? -eq 0 ]; then
-        cmd=echo grep -c $pmd_err_word $pmd_report_file
+        echo grep -c $pmd_err_word $pmd_report_file
 
         if [ $? -eq 0 ]; then
                 echo "pmd violation deteded"
