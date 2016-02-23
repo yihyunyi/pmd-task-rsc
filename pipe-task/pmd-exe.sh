@@ -12,6 +12,7 @@ pmd_report_cnt="$(java $pmd_cmd | grep -c $pmd_err_word)"
 
         if [ $cnt -gt 0 ]; then
                 echo "pmd violation $cnt deteded"
+		java $pmd_cmd
                 exit 1
         else
                 echo "pmd check success"
