@@ -7,7 +7,7 @@ pmd_report_cnt="$(java $pmd_cmd | grep -c $pmd_err_word)"
 cnt=$pmd_report_cnt
 
 if [ $cnt -gt 0 ]; then
-	echo "\133[31m pmd violation $cnt deteded"
+	echo -e "\x1B[31m pmd violation $cnt deteded \x1B[0m"
 	java $pmd_cmd
         exit 1
 else
